@@ -234,8 +234,8 @@ async def gen_thumb(videoid: str):
         draw_text_with_shadow(background, draw, (1080, 400), duration, arial, (255, 255, 255))
         
         play_icos = Image.open("AviaxMusic/assets/play_icos.png")
-        play_icos = play_icos.resize((380, 40))
-        background.paste(play_icos, (text_x_position, 540), play_icos)
+        play_icos = play_icos.resize((400, 55))
+        background.paste(play_icos, (text_x_position, 580), play_icos)
 
         play_iconmm = Image.open("AviaxMusic/assets/play_icon.png")
         play_iconmm = play_iconmm.resize((580, 62))
