@@ -57,27 +57,27 @@ def add_border(image, border_width, border_color):
     return new_image
 
 def crop_center_circle(img, output_size, border, border_color, crop_scale=1.5):
-    half_the_width = img.size[0] / 1
-    half_the_height = img.size[1] / 1
+    half_the_width = img.size[0] / 2
+    half_the_height = img.size[1] / 2
     larger_size = int(output_size * crop_scale)
     img = img.crop(
         (
-            half_the_width - larger_size/1,
-            half_the_height - larger_size/1,
-            half_the_width + larger_size/1,
-            half_the_height + larger_size/1
+            half_the_width - larger_size/2,
+            half_the_height - larger_size/2,
+            half_the_width + larger_size/2,
+            half_the_height + larger_size/2
         )
     )
     
-    img = img.resize((output_size - 2*border, output_size - 2*border))
+    img = img.resize((output_size - 1*border, output_size - 1*border))
     
     
     final_img = Image.new("RGBA", (output_size, output_size), border_color)
     
     
-    mask_main = Image.new("L", (output_size - 2*border, output_size - 2*border), 0)
+    mask_main = Image.new("L", (output_size - 1*border, output_size - 1*border), 0)
     draw_main = ImageDraw.Draw(mask_main)
-    draw_main.ellipse((0, 0, output_size - 2*border, output_size - 2*border), fill=255)
+    draw_main.ellipse((0, 0, output_size - 1*border, output_size - 1*border), fill=255)
     
     final_img.paste(img, (border, border), mask_main)
     
@@ -234,7 +234,7 @@ async def gen_thumb(videoid: str):
         draw_text_with_shadow(background, draw, (1080, 400), duration, arial, (255, 255, 255))
         
         play_icos = Image.open("AviaxMusic/assets/play_icos.png")
-        play_icos = play_icos.resize((400, 55))
+        play_icos = play_icos.resize((450, 65))
         background.paste(play_icos, (text_x_position, 580), play_icos)
 
         play_iconmm = Image.open("AviaxMusic/assets/play_icon.png")
