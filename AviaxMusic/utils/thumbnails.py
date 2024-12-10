@@ -186,8 +186,8 @@ async def gen_thumb(videoid: str):
         title_font = ImageFont.truetype("AviaxMusic/assets/font3.ttf", 45)
 
 
-        circle_thumbnail = crop_center_circle(youtube, 400,20 , start_gradient_color)
-        circle_thumbnail = circle_thumbnail.resize((400, 200))
+        circle_thumbnail = crop_center_circle(youtube, 400,40 , start_gradient_color)
+        circle_thumbnail = circle_thumbnail.resize((400, 300))
         circle_position = (120, 160)
         background.paste(circle_thumbnail, circle_position, circle_thumbnail)
 
