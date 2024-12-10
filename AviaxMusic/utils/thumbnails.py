@@ -57,15 +57,15 @@ def add_border(image, border_width, border_color):
     return new_image
 
 def crop_center_circle(img, output_size, border, border_color, crop_scale=1.5):
-    half_the_width = img.size[0] / 2
-    half_the_height = img.size[1] / 2
+    half_the_width = img.size[0] / 1
+    half_the_height = img.size[1] / 1
     larger_size = int(output_size * crop_scale)
     img = img.crop(
         (
-            half_the_width - larger_size/2,
-            half_the_height - larger_size/2,
-            half_the_width + larger_size/2,
-            half_the_height + larger_size/2
+            half_the_width - larger_size/1,
+            half_the_height - larger_size/1,
+            half_the_width + larger_size/1,
+            half_the_height + larger_size/1
         )
     )
     
