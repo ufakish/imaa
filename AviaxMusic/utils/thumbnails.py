@@ -235,7 +235,7 @@ async def gen_thumb(videoid: str):
         
         play_icos = Image.open("AviaxMusic/assets/play_icos.png")
         play_icos = play_icos.resize((470, 50))
-        background.paste(play_icos, (text_x_position, 620), play_icos)
+        background.paste(play_icos, (text_x_position, 130, 170), play_icos)
 
         play_iconmm = Image.open("AviaxMusic/assets/play_icon.png")
         play_iconmm = play_iconmm.resize((580, 62))
