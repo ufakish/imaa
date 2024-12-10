@@ -186,7 +186,7 @@ async def gen_thumb(videoid: str):
         title_font = ImageFont.truetype("AviaxMusic/assets/font3.ttf", 45)
 
 
-        circle_thumbnail = crop_center_circle(youtube, 400,40 , start_gradient_color)
+        circle_thumbnail = crop_center_circle(youtube, 400,30 , start_gradient_color)
         circle_thumbnail = circle_thumbnail.resize((400, 300))
         circle_position = (120, 160)
         background.paste(circle_thumbnail, circle_position, circle_thumbnail)
@@ -235,12 +235,12 @@ async def gen_thumb(videoid: str):
         
         play_ic = Image.open("AviaxMusic/assets/play_ic.png")
         play_ic = play_ic.resize((520, 55))
-        background.paste(play_ic, (65, 460), play_ic)
+        background.paste(play_ic, (65, 470), play_ic)
         
 
         play_iconmm = Image.open("AviaxMusic/assets/play_icon.png")
         play_iconmm = play_iconmm.resize((580, 62))
-        background.paste(play_iconmm, (text_x_position, 460), play_iconmm)
+        background.paste(play_iconmm, (text_x_position, 470), play_iconmm)
 
         os.remove(f"cache/thumb{videoid}.png")
 
